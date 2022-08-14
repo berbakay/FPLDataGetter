@@ -3,16 +3,18 @@
  * @returns { Promise<void> } 
  */
 
- const Week = 1
- const WeekData = require(`../data/2223data/${Week}.js`);
+const { gameWeek } = require('../../globalVariables')
+
+ const Week = gameWeek
+ const WeekData = require(`../data/${Week}.json`);
 
  const seed = function(knex) {
    console.log('inserting.....')
-   console.log(WeekData);
    return knex(`week${Week}`).insert(
      WeekData
    )
    .returning('*')
+   
    };
  
    module.exports = { seed };

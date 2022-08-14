@@ -3,12 +3,14 @@
  * @returns { Promise<void> }
  */
 
-const TableName = 'week1';
+
+const { gameWeek } = require('../../globalVariables')
+const TableName = `week${gameWeek}`;
 
 exports.up = function(knex) {
     console.log('creating tables....')
     return knex.schema.createTable(`${TableName}`, ( table ) => {
-        table.increments();
+        table.integer('id').primary();
         table.string('player_name').notNullable();
         table.integer('games').notNullable();
         table.integer('time').notNullable();
@@ -26,6 +28,17 @@ exports.up = function(knex) {
         table.double('npxG').notNullable();
         table.double('xGChain').notNullable();
         table.double('xGBuildup').notNullable();
+        table.integer('opponent_team');
+        table.integer('total_points');
+        table.boolean('was_home');
+        table.integer('goals_conceded');
+        table.integer('saves');
+        table.integer('bonus');
+        table.integer('bps');
+        table.integer('clean_sheets');
+        table.integer('value');
+        table.integer('selected');
+        table.integer('transfers_balance');
   });
 };
 
