@@ -5,6 +5,7 @@ const { gameWeek } = require('../globalVariables')
 const jsonPlayers = require(`../knex/data/${gameWeek}.json`)
 const fs = require('fs')
 const { resourceLimits } = require('worker_threads')
+const { playerNameObj } = require('./lonelyPlayerName')
 
 const pool = new Pool({
     username: "rick",
@@ -17,9 +18,6 @@ const pool = new Pool({
 const GameWeek = gameWeek;
 
 function playerNameSorter( playerName ) {
-    const playerNameObj = {
-        "Aleksandar Mitrović": "Aleksandar Mitrovic"
-    }
 
     let newName = playerName;
 
@@ -38,6 +36,8 @@ async function GetFplData( playerDataObj ) {
     const newPlayerDatatObjArray = [...playerDataObj];
     let players = []
     let promises = []
+    let notFoundPlayers = []
+    let passTwoNotFound = []
 
     axios.get( 'https://fantasy.premierleague.com/api/bootstrap-static/')
     .then( res => {
@@ -99,23 +99,64 @@ async function GetFplData( playerDataObj ) {
         Promise.all(promises).then( () => {
             //console.log( players )
             players.forEach(fplPlayer => {
+                let foundPlayer = false;
                 newPlayerDatatObjArray.forEach( understatPlayer => {
+                    let passTwoFound = false;
                     if( understatPlayer.player_name == fplPlayer.player_name )
                     {
+                        foundPlayer = true;
                         for( const key of Object.keys(fplPlayer ) )
                         {
                             understatPlayer[key] = fplPlayer[key];
                         }
                     }
+
+                    players.forEach( secondPass => {
+                        if( secondPass.player_name == understatPlayer.player_name )
+                        {
+                            passTwoFound = true;
+                        }
+
+                    })
+
+                    if( !passTwoFound )
+                    {
+                        if( !passTwoNotFound.includes( understatPlayer.player_name ) )
+                        {
+                            passTwoNotFound.push( understatPlayer.player_name)
+                        }   
+                    }
                 })
+
+                if( !foundPlayer )
+                {
+                    notFoundPlayers.push( fplPlayer.player_name );
+                }
             })
-            console.log(typeof(newPlayerDatatObjArray));
             
             fs.writeFile(`../knex/data/${GameWeek}.json`, JSON.stringify(newPlayerDatatObjArray), err => {
                 if (err)
                 {
                     console.log( err )
-                }     
+                }  
+                else
+                {
+                    fs.writeFile(`../knex/data/notFound/lonelyFplPlayers${GameWeek}.json`, JSON.stringify(notFoundPlayers), err => {
+                        if (err)
+                        {
+                            console.log( err )
+                        }
+                        else
+                        {
+                            fs.writeFile(`../knex/data/notFound/lonelyUnderstatPlayers${GameWeek}.json`, JSON.stringify(passTwoNotFound), err => {
+                                if (err)
+                                {
+                                    console.log( err )
+                                }
+                            })
+                        }
+                    })
+                }   
             }) 
         })
     )

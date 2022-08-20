@@ -1,5 +1,6 @@
 const axios = require('axios')
-const fs = require('fs')
+const fs = require('fs');
+const { type } = require('os');
 const { gameWeek } = require('../globalVariables');
 
 const WeekNumber = gameWeek;
@@ -13,13 +14,15 @@ const testFunction = () => {
 
             EditedRes = EditedRes[1].split("');")
 
-            var newEditedres = EditedRes[0].replace(/\\x/g, "%");
+            let newEditedres = EditedRes[0].replace(/\\x/g, "%");
 
-            fs.writeFile(`../knex/data/${WeekNumber}.json`, decodeURIComponent(newEditedres), err => {
+            let newNewEditedres = decodeURIComponent(newEditedres).replace(/&#039;/g,`'`).replace(/\\u00e9/g, 'é')
+
+            fs.writeFile(`../knex/data/${WeekNumber}.json`, newNewEditedres, 'utf8', err => {
                 if (err)
                 {
                     console.log( err )
-                }     
+                }                    
             }) 
         }
     })
