@@ -8,14 +8,16 @@
 
 5) check the understat lonely player file and ammend the lonelyPlayerName file until it's clear
 
-6) knex migrate:make weekn
+6) run AddPositions and check if any players missing positions, edit positions.js file and run again if needs be
 
-7) In the newly created migration file Copy file info from previous week
+7) knex migrate:make weekn
 
-8) knex migrate:latest
+8) In the newly created migration file Copy file info from previous week
 
-9) knex seed:make weekn --env development
+9) knex migrate:latest
 
-10) In newly created seed file copy file info from previous week
+10) knex seed:make weekn --env development
 
-11) knex seed:run --specific=weekn.js
+11) In newly created seed file copy file info from previous week
+
+12) knex seed:run --specific=weekn.js

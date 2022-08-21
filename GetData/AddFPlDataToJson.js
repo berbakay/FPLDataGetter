@@ -56,6 +56,8 @@ async function GetFplData( playerDataObj ) {
             playerObj.fullName = fullName;
             playerObj.id = id;
 
+
+
             filteredplaylists.push( playerObj )
 
         });
@@ -87,6 +89,7 @@ async function GetFplData( playerDataObj ) {
                                 fplDataPlayerObj.transfers_balance = playerDataHistory[j].transfers_balance;
                                 fplDataPlayerObj.player_name = playerNameSorter(player.fullName);
                                 fplDataPlayerObj.id = player.id;
+                                fplDataPlayerObj.second_name = player.second_name;
 
                                 players.push(fplDataPlayerObj);
                             }
@@ -101,6 +104,9 @@ async function GetFplData( playerDataObj ) {
             players.forEach(fplPlayer => {
                 let foundPlayer = false;
                 newPlayerDatatObjArray.forEach( understatPlayer => {
+
+                    delete understatPlayer.position
+
                     let passTwoFound = false;
                     if( understatPlayer.player_name == fplPlayer.player_name )
                     {
@@ -108,6 +114,7 @@ async function GetFplData( playerDataObj ) {
                         for( const key of Object.keys(fplPlayer ) )
                         {
                             understatPlayer[key] = fplPlayer[key];
+
                         }
                     }
 
