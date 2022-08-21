@@ -1,5 +1,5 @@
 const { gameWeek } = require('../globalVariables')
-const positions = require('../Tests/positions.json')
+const positions = require('../knex/data/positions.json')
 const playerList = require(`../knex/data/${gameWeek}.json`)
 const fs = require('fs')
 

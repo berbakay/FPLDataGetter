@@ -1,5 +1,5 @@
 const missingPositionPlayers = require('../knex/data/notFound/noPosition1.json')
-const positionPlayers = require('../Tests/positions.json')
+const positionPlayers = require('./positions.json')
 const fs = require('fs')
 
 function loopAllPlayerTeams ( missingPositionPlayers ) {

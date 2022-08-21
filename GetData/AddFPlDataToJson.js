@@ -6,6 +6,7 @@ const jsonPlayers = require(`../knex/data/${gameWeek}.json`)
 const fs = require('fs')
 const { resourceLimits } = require('worker_threads')
 const { playerNameObj } = require('./lonelyPlayerName')
+const { teamArray } = require('../knex/data/opponentTeam')
 
 const pool = new Pool({
     username: "rick",
@@ -76,7 +77,8 @@ async function GetFplData( playerDataObj ) {
                             {
                                 const fplDataPlayerObj = {}
 
-                                fplDataPlayerObj.opponent_team = playerDataHistory[j].opponent_team;
+                                fplDataPlayerObj.opponent_team_int = playerDataHistory[j].opponent_team;
+                                fplDataPlayerObj.opponet_team_str = teamArray[fplDataPlayerObj.opponent_team_int]
                                 fplDataPlayerObj.total_points = playerDataHistory[j].total_points;
                                 fplDataPlayerObj.was_home = playerDataHistory[j].was_home;
                                 fplDataPlayerObj.goals_conceded = playerDataHistory[j].goals_conceded;
