@@ -860,9 +860,9 @@
         "team": "Southampton"
     },
     {
-        "name": "Emerson",
+        "name": "Emersonn",
         "position": "D",
-        "team": "Chelsea"
+        "team": "West Ham"
     },
     {
         "name": "Emerson",
@@ -2760,7 +2760,7 @@
         "team": "Liverpool"
     },
     {
-        "name": "Van Hecke",
+        "name": "Jan Paul van Hecke",
         "position": "D",
         "team": "Brighton"
     },
@@ -2953,5 +2953,20 @@
         "name": "Matheus Nunes",
         "position": "M",
         "team": "Wolverhampton Wanderers"
+    },
+    {
+        "name": "Casemiro",
+        "position": "M",
+        "team": "Manchester United"
+    },
+    {
+        "name": "Zanka",
+        "position": "D",
+        "team": "Brentford"
+    },
+    {
+        "name": "Owen Bevan",
+        "position": "D",
+        "team": "Bournemouth"
     }
 ]

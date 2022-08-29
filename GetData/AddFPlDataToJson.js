@@ -107,11 +107,16 @@ async function GetFplData( playerDataObj ) {
                 let foundPlayer = false;
                 newPlayerDatatObjArray.forEach( understatPlayer => {
 
+                    if(understatPlayer.player_name == 'Emerson' && understatPlayer.team_title == "West Ham" )
+                    {
+                        understatPlayer.player_name = 'Emersonn'
+                    }
+
                     delete understatPlayer.position
 
                     let passTwoFound = false;
                     if( understatPlayer.player_name == fplPlayer.player_name )
-                    {
+                    {                    
                         foundPlayer = true;
                         for( const key of Object.keys(fplPlayer ) )
                         {

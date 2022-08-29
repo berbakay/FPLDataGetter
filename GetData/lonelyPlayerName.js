@@ -75,7 +75,11 @@ const playerNameObj = {
     "João Filipe Iria Santos Moutinho":"João Moutinho",
     "Pervis Estupiñán":"Estupiñán",
     "Lyanco Silveira Neves Vojnovic":"Lyanco",
-    "Matheus Luiz Nunes":"Matheus Nunes"
+    "Matheus Luiz Nunes":"Matheus Nunes",
+    "Carlos Henrique Casimiro": "Casemiro",
+    "Mathias Jorgensen":"Zanka",
+    "Boubakary Soumaré": "Boubakary Soumare",
+    "Emerson Palmieri dos Santos": "Emersonn"
 }
 
 module.exports = { playerNameObj };
