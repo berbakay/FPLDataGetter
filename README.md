@@ -10,14 +10,16 @@
 
 6) run AddPositions and check if any players missing positions, edit positions.js file and run again if needs be
 
-7) knex migrate:make weekn
+7) run subtractResults.js
 
-8) In the newly created migration file Copy file info from previous week
+8) knex migrate:make weekn
 
-9) knex migrate:latest
+9) In the newly created migration file Copy file info from previous week
 
-10) knex seed:make weekn --env development
+10) knex migrate:latest
 
-11) In newly created seed file copy file info from previous week
+11) knex seed:make weekn --env development
 
-12) knex seed:run --specific=weekn.js
+13) In newly created seed file copy file info from previous week
+
+14) knex seed:run --specific=weekn.js

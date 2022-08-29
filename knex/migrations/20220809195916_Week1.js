@@ -22,7 +22,6 @@ exports.up = function(knex) {
         table.integer('key_passes').notNullable();
         table.integer('yellow_cards').notNullable();
         table.integer('red_cards').notNullable();
-        table.string('position').notNullable();
         table.string('team_title').notNullable();
         table.integer('npg').notNullable();
         table.double('npxG').notNullable();
@@ -40,6 +39,7 @@ exports.up = function(knex) {
         table.integer('value').notNullable();
         table.integer('selected').notNullable();
         table.integer('transfers_balance').notNullable();
+        table.string('second_name').notNullable();
         table.string('position').notNullable();
   });
 };

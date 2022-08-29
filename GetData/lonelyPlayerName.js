@@ -70,7 +70,12 @@ const playerNameObj = {
     "Halil Dervişoğlu":"Halil Dervisoglu",
     "Armel Bella-Kotchap":"Armel Bella Kotchap",
     "José Malheiro de Sá": "José Sá",
-    "Roméo Lavia":"Romeo Lavia"
+    "Roméo Lavia":"Romeo Lavia",
+    "Raphaël Varane":"Raphael Varane",
+    "João Filipe Iria Santos Moutinho":"João Moutinho",
+    "Pervis Estupiñán":"Estupiñán",
+    "Lyanco Silveira Neves Vojnovic":"Lyanco",
+    "Matheus Luiz Nunes":"Matheus Nunes"
 }
 
 module.exports = { playerNameObj };
