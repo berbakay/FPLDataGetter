@@ -1,4 +1,4 @@
-1) Go to undertstat.com filter down to the data you want and copy source code and apste in to html file in UnderstatWeeklyHTML Directory as week number n.html
+1) Go to undertstat.com filter  and copy source code and apste in to html file in UnderstatWeeklyHTML Directory as week number n.html
 
 2) Change the week number globalVariable to weekn
 

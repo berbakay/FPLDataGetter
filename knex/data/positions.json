@@ -947,7 +947,7 @@
     {
         "name": "Fofana",
         "position": "D",
-        "team": "Leicester"
+        "team": "Chelsea,Leicester"
     },
     {
         "name": "Pablo Fornals",
@@ -1052,7 +1052,7 @@
     {
         "name": "Gilmour",
         "position": "M",
-        "team": "Chelsea"
+        "team": "Brighton"
     },
     {
         "name": "Godfrey",
@@ -1277,7 +1277,7 @@
     {
         "name": "James",
         "position": "M",
-        "team": "Leeds"
+        "team": "Fulham,Leeds"
     },
     {
         "name": "Janelt",
@@ -1625,9 +1625,9 @@
         "team": "Manchester City"
     },
     {
-        "name": "Maitland-Niles",
+        "name": "Ainsley Maitland-Niles",
         "position": "M",
-        "team": "Arsenal"
+        "team": "Southampton"
     },
     {
         "name": "Malacia",
@@ -1712,7 +1712,7 @@
     {
         "name": "Maupay",
         "position": "F",
-        "team": "Brighton"
+        "team": "Everton"
     },
     {
         "name": "Mbabu",
@@ -2968,5 +2968,50 @@
         "name": "Owen Bevan",
         "position": "D",
         "team": "Bournemouth"
+    },
+    {
+        "name": "Alexander Isak",
+        "position": "F",
+        "team": "Newcastle United"
+    },
+    {
+        "name": "Lucas Paquetá",
+        "position": "M",
+        "team": "West Ham"
+    },
+    {
+        "name": "Renan Lodi",
+        "position": "D",
+        "team": "Nottingham Forest"
+    },
+    {
+        "name": "Antony",
+        "position": "M",
+        "team": "Manchester United"
+    },
+    {
+        "name": "Idrissa Gueye",
+        "position": "M",
+        "team": "Everton"
+    },
+    {
+        "name": "Willian",
+        "position": "M",
+        "team": "Fulham"
+    },
+    {
+        "name": "Carlos Vinicius",
+        "position": "F",
+        "team": "Fulham"
+    },
+    {
+        "name": "Sasa Kalajdzic",
+        "position": "F",
+        "team": "Wolverhampton Wanderers"
+    },
+    {
+        "name": "Samuel Edozie",
+        "position": "M",
+        "team": "Southampton"
     }
 ]

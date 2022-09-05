@@ -1,3 +1,3 @@
-const gameWeek = 4;
+const gameWeek = 6;
 
 module.exports = { gameWeek };

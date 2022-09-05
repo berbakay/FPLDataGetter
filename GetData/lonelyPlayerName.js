@@ -79,7 +79,15 @@ const playerNameObj = {
     "Carlos Henrique Casimiro": "Casemiro",
     "Mathias Jorgensen":"Zanka",
     "Boubakary Soumaré": "Boubakary Soumare",
-    "Emerson Palmieri dos Santos": "Emersonn"
+    "Emerson Palmieri dos Santos": "Emersonn",
+    "Norberto Murara Neto":"Neto",
+    "Lucas Tolentino Coelho de Lima":"Lucas Paquetá",
+    "Renan Augusto Lodi dos Santos":"Renan Lodi",
+    "Antony Matheus dos Santos":"Antony",
+    "Willian Borges da Silva":"Willian",
+    "Diogo Teixeira da Silva":"Diogo Jota",
+    "Carlos Vinícius Alves Morais":"Carlos Vinicius",
+    "Fábio Ferreira Vieira":"Fábio Vieira"
 }
 
 module.exports = { playerNameObj };
